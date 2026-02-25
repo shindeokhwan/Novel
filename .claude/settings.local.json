@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(tree *)",
+      "Bash(wc *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "mcp__serena__activate_project",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(python:*)",
+      "Bash(powershell -Command:*)"
+    ],
+    "deny": []
+  },
+  "preferences": {
+    "outputStyle": "explanatory",
+    "autoUpdates": false
+  }
+}
