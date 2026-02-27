@@ -21,7 +21,8 @@
       "Bash(python3:*)",
       "Bash(grep:*)",
       "Bash(python:*)",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   },
