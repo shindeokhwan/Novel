@@ -22,7 +22,9 @@
       "Bash(grep:*)",
       "Bash(python:*)",
       "Bash(powershell -Command:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   },

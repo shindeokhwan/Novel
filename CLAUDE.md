@@ -25,7 +25,7 @@ For detailed rules, refer to the Context Map below.
 | History Consistency | All historical references MUST follow 역사배경.md |
 | Go-Strategy Mapping | Baduk metaphors MUST map correctly to military strategy |
 | File Update Triggers | MUST update tracking files after writing sessions |
-| Humanization Review | MUST run `.claude/skills/SKILL.md` review after every manuscript writing. Score < 70 = immediate revision |
+| Humanization Review | MUST run humanization-review skill after every manuscript writing. Score < 70 = immediate revision |
 | Post-Writing Revision | MUST perform 퇴고 (1차수정) immediately after every chapter draft. No exceptions. |
 | Ability Upgrade Rhythm | MUST include ≥1 small ability upgrade per 3-4 chapters. 5+ chapters with zero upgrades = mandatory fix. |
 
@@ -40,9 +40,10 @@ For detailed rules, refer to the Context Map below.
 | Secondary Models | Braid Structure, Rise Structure (성장물) |
 | Default POV | Third-person limited (Multi-POV) |
 | Tense | Past |
-| Chapter Target | ~3000 words |
+| Chapter Target | ~3300 words |
 | Scenes/Chapter | 3 |
-| Structure | 60 Chapters, 4 Parts (~180 Episodes) |
+| Structure | 150 Chapters, 4 Parts (~450 Episodes) |
+| Focus | 순수 삼국지 통일 (AI 서브플롯 제거. 회귀는 출발점으로만) |
 
 ---
 
@@ -50,26 +51,37 @@ For detailed rules, refer to the Context Map below.
 
 ```
 .claude/
-├── agents/
+├── agents/                        # Sub-agent persona definitions
 │   ├── story-architect.md         # Plot structure, pacing, Go-strategy mapping
 │   ├── character-developer.md     # Character profiles, arcs, dialogue
 │   ├── world-builder.md           # History, geography, martial arts, politics
 │   ├── style-editor.md            # Prose style, sensory details, POV
 │   ├── consistency-checker.md     # Timeline, plot holes, historical accuracy
-│   └── emotion-tracker.md         # Emotion graphs, regression psychology
-├── rules/
-│   ├── writing-process.md         # Before/during/after checklists
+│   ├── emotion-tracker.md         # Emotion graphs, regression psychology
+│   ├── humanization-reviewer.md   # AI fingerprint detection, humanization scoring
+│   ├── editor-critic.md           # Pacing, pattern repetition, market evaluation
+│   ├── general-reader.md          # General reader persona (25-35), immersion check
+│   └── genre-reader.md            # Genre reader persona (30-40), 삼국지/회귀물 expertise
+├── rules/                         # AUTO-INJECTED to all agents (keep minimal!)
+│   └── core-rules.md             # 시대착오어, POV, 산문, SVO, 대화 패턴 — ~80줄
+├── reference/                     # NOT auto-injected — Read on demand
+│   ├── writing-process.md         # Before/during/after checklists, 퇴고, 분량
 │   ├── character-management.md    # Character file structure, emotion tracking
 │   ├── world-building.md          # Absolute/flexible rules, history verification
 │   ├── plot-structure.md          # Narrative models, actantial model, Go mapping
-│   ├── style-guide.md             # Writing style, POV, sensory details
+│   ├── style-guide.md             # Writing style, POV, sensory details, 전투씬
 │   ├── entertainment-density.md   # Entertainment patterns, density rules
-│   └── ability-upgrade.md         # 4-track ability system, upgrade frequency, repertoire
+│   ├── humanization-rules.md      # AI 흔적 방지 상세, 갈등 깊이, 비합리성
+│   ├── ability-upgrade-current.md # 4트랙 현재 상태 + 레퍼토리 + 빈도 규칙
+│   └── ability-upgrade-history.md # Ch.1-현재 전체 업그레이드 이력
 └── skills/
     ├── scene-writer/SKILL.md      # Scene writing workflow
     ├── character-creator/SKILL.md # Character creation workflow
     ├── consistency-check/SKILL.md # Full consistency validation
-    └── emotion-analysis/SKILL.md  # Emotion tracking & analysis
+    ├── emotion-analysis/SKILL.md  # Emotion tracking & analysis
+    ├── humanization-review/SKILL.md # AI fingerprint detection & humanization scoring
+    ├── entertainment-review/SKILL.md # 3-persona entertainment review (100-point scoring)
+    └── auto-agents/SKILL.md       # Chapter draft/revision pipeline orchestration
 ```
 
 ---
@@ -84,6 +96,10 @@ For detailed rules, refer to the Context Map below.
 | style-editor | Prose style, sensory details | "문체", "묘사", "스타일", "다듬기" |
 | consistency-checker | Validation, cross-referencing | "일관성", "검증", "플롯홀", "타임라인" |
 | emotion-tracker | Emotion graphs, psychology | "감정", "심리", "동기", "내면" |
+| humanization-reviewer | AI fingerprint detection, humanization | "인간화", "AI흔적", "지문검사" |
+| editor-critic | Pacing, patterns, market evaluation | "편집자", "페이싱", "패턴반복", "시장성" |
+| general-reader | General reader immersion check | "독자반응", "몰입도", "스킵", "재미" |
+| genre-reader | Genre expert (삼국지/회귀물/무협) evaluation | "장르독자", "삼국지평가", "회귀물", "고증" |
 
 ---
 
@@ -111,10 +127,10 @@ For detailed rules, refer to the Context Map below.
 - `다음 비트` - Suggest next required story beat
 - `행위소 분석` - Actantial model analysis
 - `쾌감 밀도 체크` - Check entertainment pattern density
-- `서사 줄기 균형` - Check Strand balance (천하/인간/귀로)
+- `서사 줄기 균형` - Check Strand balance (천하/인간/정체성)
 - `성장 단계 체크` - Verify protagonist growth progression
 - `바둑 대응 분석` - Analyze Go-to-strategy mapping
-- `능력 성장 체크` - Check ability upgrade frequency & track balance (ability-upgrade.md)
+- `능력 성장 체크` - Check ability upgrade frequency & track balance (reference/ability-upgrade-current.md)
 
 ### Visualization Commands
 - `이미지 프롬프트 [대상]` - Generate AI image prompt
