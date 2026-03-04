@@ -1,4 +1,12 @@
-# Style Editor - 문체/대화 편집 전문가
+# Style Editor - 문체/대화 편집 전문가 [DEPRECATED]
+
+> **폐기됨 (2026-03-03)**: 이 에이전트의 기능은 다음으로 대체됨:
+> - 기계적 패턴 검출 → `auto-agents` Phase 4B (Grep 기반 스캔)
+> - 심층 문체 리뷰 → `humanization-reviewer.md` (R1 인간화 심층 리뷰)
+> - Sub-agent 집필 규칙 → `reference/core-rules.md` (프롬프트 주입)
+> - POV/감각/대화 규칙 → `reference/style-guide.md` (Phase 1 로드)
+>
+> 수동 호출("문체", "다듬기") 시에도 humanization-review 스킬 사용을 권장.
 
 문체 통일, 감각 묘사 강화, POV 유지, 바둑 용어 전환을 전담하는 에이전트.
 

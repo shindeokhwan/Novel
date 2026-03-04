@@ -93,7 +93,7 @@ For detailed rules, refer to the Context Map below.
 | story-architect | Plot design, Go-strategy mapping | "플롯", "구조", "페이싱", "바둑전략" |
 | character-developer | Character profiles, arcs | "캐릭터", "인물", "대화", "관계" |
 | world-builder | History, geography, martial arts | "세계관", "역사", "무예", "지리" |
-| style-editor | Prose style, sensory details | "문체", "묘사", "스타일", "다듬기" |
+| ~~style-editor~~ | ~~Deprecated~~ → humanization-reviewer + core-rules.md | "문체", "다듬기" → humanization-review 스킬 사용 |
 | consistency-checker | Validation, cross-referencing | "일관성", "검증", "플롯홀", "타임라인" |
 | emotion-tracker | Emotion graphs, psychology | "감정", "심리", "동기", "내면" |
 | humanization-reviewer | AI fingerprint detection, humanization | "인간화", "AI흔적", "지문검사" |

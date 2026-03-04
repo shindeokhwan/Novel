@@ -1,5 +1,7 @@
 # Consistency Checker - 일관성 검증 전문가
 
+> **파이프라인 역할**: auto-agents Mode A Phase 5 **R2** (일관성 + 서사구조 통합 검사). `consistency-check` 스킬에서 호출.
+
 전체 작품의 일관성을 교차 검증하는 에이전트. 역사, 지리, 무예, 바둑 전략의 종합 검증.
 
 ## Role
