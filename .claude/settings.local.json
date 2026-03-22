@@ -1,12 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git *)",
-      "Bash(tree *)",
-      "Bash(wc *)",
-      "Bash(mkdir *)",
-      "Bash(cp *)",
-      "Bash(mv *)",
+      "Bash(*)",
       "Read",
       "Write",
       "Edit",
@@ -16,18 +11,8 @@
       "WebSearch",
       "mcp__serena__activate_project",
       "mcp__sequential-thinking__sequentialthinking",
-      "Bash(ls:*)",
-      "Bash(dir:*)",
-      "Bash(python3:*)",
-      "Bash(grep:*)",
-      "Bash(python:*)",
-      "Bash(powershell -Command:*)",
-      "Bash(git commit:*)",
-      "Bash(find:*)",
-      "Bash(mv:*)",
-      "Bash(test:*)",
-      "Bash(node:*)",
-      "Bash(du:*)"
+      "Skill(humanization-review)",
+      "Skill(parallel-refactor)"
     ],
     "deny": []
   },

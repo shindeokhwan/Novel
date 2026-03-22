@@ -81,7 +81,8 @@ For detailed rules, refer to the Context Map below.
     ├── emotion-analysis/SKILL.md  # Emotion tracking & analysis
     ├── humanization-review/SKILL.md # AI fingerprint detection & humanization scoring
     ├── entertainment-review/SKILL.md # 3-persona entertainment review (100-point scoring)
-    └── auto-agents/SKILL.md       # Chapter draft/revision pipeline orchestration
+    ├── auto-agents/SKILL.md       # Chapter draft/revision pipeline orchestration
+    └── parallel-refactor/SKILL.md # 5챕터 병렬 리팩토링 + 교차 퇴고
 ```
 
 ---
